@@ -1,0 +1,79 @@
+.cards .image:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+
+
+.image {
+  position: relative;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image:hover img {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
+.selection-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image:hover .selection-overlay {
+  opacity: 1;
+}
+
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25); 
+  z-index: 1;
+  pointer-events: none; 
+}
+
+
+.checkbox-like {
+  
+}
+
+
+
+.check-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2; 
+}
+
+
+.image.selected {
+  opacity: 0.50; 
+}
+
+
